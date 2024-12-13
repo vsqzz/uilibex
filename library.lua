@@ -1241,9 +1241,28 @@ end)
             UICorner_2.CornerRadius = UDim.new(0, 15)
             UICorner_2.Parent = Box
 
+            -- Fix for the Glow ImageLabel creation
             local Glow = Instance.new("ImageLabel")
             Glow.Name = "Glow"
-            Glow.Parent = BoxTo present this UI library code, I'll use the general code block type with Lua syntax highlighting:
+            Glow.Parent = Box
+            Glow.AnchorPoint = Vector2.new(0.5, 0.5)
+            Glow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Glow.BackgroundTransparency = 1.000
+            Glow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            Glow.BorderSizePixel = 0
+            Glow.Position = UDim2.new(0.5, 0, 0.5, 0)
+            Glow.Size = UDim2.new(0, 204, 0, 17)
+            Glow.ZIndex = 2
+            Glow.Image = "rbxassetid://17381990533"
+            
+            local UIGradient = Instance.new("UIGradient")
+            UIGradient.Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0.00, 0.00), 
+                NumberSequenceKeypoint.new(0.50, 0.00), 
+                NumberSequenceKeypoint.new(0.53, 1.00), 
+                NumberSequenceKeypoint.new(1.00, 1.00)
+            }
+            UIGradient.Parent = Glow
 
 ```lua project="Visual UI Library" file="library.lua" type="code"
 local UserInputService = game:GetService('UserInputService')
