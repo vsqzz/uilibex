@@ -17,6 +17,11 @@ local Library = {
     start_position = nil;
 }
 
+-- Interface Management
+local Library = game:GetObjects("rbxassetid://10804731440")[1]
+
+Library.Enabled = false
+
 if not isfolder("Visual") then
     makefolder("Visual")
 end
